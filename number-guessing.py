@@ -30,7 +30,10 @@ def choose_difficulty():
         return HARD_LEVEL_ATTEMPTS
     
 turns = choose_difficulty()
+print(f"You have {turns} attempts remaining to guess the correct number.")
 
 
 # User's guess, will only take int
 guess = int(input("Make a guess: "))
+
+check_answer(guess, computer_answer)
