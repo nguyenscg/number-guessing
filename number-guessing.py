@@ -1,39 +1,9 @@
-import random
+# Welcome to the Number Guessing Game!
+# I'm thinking of a number between 1 and 100
+# Choose a difficulty: Type 'easy' or 'hard'
 
-EASY_LEVEL_ATTEMPTS = 10
-HARD_LEVEL_ATTEMPTS = 5
-
-print("Welcome to the Number Guessing Game!")
-print("I'm thinking of a number between 1 and 100. ")
-
-# The answer from 1 to 100
-computer_answer = random.randint(1, 100)
-print(computer_answer)
-
-# Too high or too low against the user's guess
-
-def check_answer(user_guess, the_actual):
-    if user_guess > the_actual:
-        print("Too high!")
-    elif user_guess < the_actual:
-        print("Too low!")
-    else:
-        print("You got it!")
-
-# Easy should have 10 attempts, Hard should be 5 attempts
-def choose_difficulty():
-    level = input("Choose a difficulty. Type 'easy' or 'hard': ")
-
-    if level == 'easy':
-        return EASY_LEVEL_ATTEMPTS
-    else:
-        return HARD_LEVEL_ATTEMPTS
-    
-turns = choose_difficulty()
-print(f"You have {turns} attempts remaining to guess the correct number.")
-
-
-# User's guess, will only take int
-guess = int(input("Make a guess: "))
-
-check_answer(guess, computer_answer)
+# User chooses a level, easy = 10 attempts, hard = 5 attempts
+# Prompt 'Make a guess' input
+# Compare guess if its lower or higher
+# If the guess is wrong, should -1 from attempts, allows user to guess again
+# Keeps going until reaches 0 attempts, stops the loop right away when the guess is correct
