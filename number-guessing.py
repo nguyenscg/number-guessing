@@ -13,7 +13,7 @@ def set_difficulty():
         return HARD_LEVEL
 
 # Create a function that compares the guess to the number that the computer is thinking, pass in number input
-def compare(guessed, answer):
+def compare(guessed, answer, turns):
     if guessed == answer:
         print(f"You guessed correctly! it is {answer}")
     elif guessed > answer:
@@ -34,6 +34,9 @@ def game():
     # allow user to guess again, so use a while loop
     # user should be allowed to guess again even if guessed wrong
     # game keeps going until reaches 0
+
+    # intialize number variable to 0
+    guess = 0
     while guess != computer_number:
         # You have xx attempts remaining to guess the number
         print(f"You have {turns} attempts to guess the number.")
