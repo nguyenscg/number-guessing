@@ -1,6 +1,8 @@
-# Welcome to the Number Guessing Game!
-# I'm thinking of a number between 1 and 100
-# Choose a difficulty: Type 'easy' or 'hard'
+import random 
+
+print("Welcome to the Number Guessing Game!")
+print("I'm thinking of a number between 1 and 100.")
+difficulty = input("Choose a difficulty. Type 'easy' or 'hard': ")
 
 # User chooses a level, easy = 10 attempts, hard = 5 attempts
 # Prompt 'Make a guess' input
