@@ -4,6 +4,10 @@ print("Welcome to the Number Guessing Game!")
 print("I'm thinking of a number between 1 and 100.")
 difficulty = input("Choose a difficulty. Type 'easy' or 'hard': ")
 
+# Global constants || won't ever be changing these variables
+EASY_LEVEL = 10
+HARD_LEVEL = 5
+
 # User chooses a level, easy = 10 attempts, hard = 5 attempts
 # Prompt 'Make a guess' input
 # Compare guess if its lower or higher
