@@ -1,20 +1,16 @@
 import random 
 
-print("Welcome to the Number Guessing Game!")
-print("I'm thinking of a number between 1 and 100.")
-difficulty = input("Choose a difficulty. Type 'easy' or 'hard': ")
-
 # Global constants || won't ever be changing these variables
 EASY_LEVEL = 10
 HARD_LEVEL = 5
 
 # Create a function that sets the difficulty
 def set_difficulty():
+    difficulty = input("Choose a difficulty: Type 'easy' or 'hard' ")
     if difficulty == "easy":
         return EASY_LEVEL
     else:
         return HARD_LEVEL
-set_difficulty()
 
 # Create a function that compares the guess to the number that the computer is thinking, pass in number input
 def compare(guessed):
@@ -26,8 +22,10 @@ def game():
     # Print Welcome and Message statements
     print("Welcome to the Number Guessing Game!")
     print("I'm thinking of a number between 1 and 100.")
+    # Set the difficulty based on the user's level selection, this will trigger the set_difficulty function and store the amount of attempts based on level
+    level = set_difficulty()
 
-
+game()
 
 # User chooses a level, easy = 10 attempts, hard = 5 attempts
 # Prompt 'Make a guess' input
