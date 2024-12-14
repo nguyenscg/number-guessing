@@ -11,11 +11,23 @@ HARD_LEVEL = 5
 # Create a function that sets the difficulty
 def set_difficulty():
     if difficulty == "easy":
-        print(EASY_LEVEL)
         return EASY_LEVEL
     else:
         return HARD_LEVEL
 set_difficulty()
+
+# Create a function that compares the guess to the number that the computer is thinking, pass in number input
+def compare(guessed):
+    computer_number = random.randint(1, 100)
+    if guessed == computer_number:
+        print(f"You guessed correctly! it is {computer_number}")
+
+def game():
+    # Print Welcome and Message statements
+    print("Welcome to the Number Guessing Game!")
+    print("I'm thinking of a number between 1 and 100.")
+
+
 
 # User chooses a level, easy = 10 attempts, hard = 5 attempts
 # Prompt 'Make a guess' input
