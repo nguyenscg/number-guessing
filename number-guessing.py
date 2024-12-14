@@ -14,16 +14,16 @@ def set_difficulty():
 
 # Create a function that compares the guess to the number that the computer is thinking, pass in number input
 def compare(guessed, answer, turns):
-    if guessed == answer:
-        print(f"You guessed correctly! it is {answer}")
     # If the guess is too high compare to the answer, -1 turns
-    elif guessed > answer:
+    if guessed > answer:
         print("Too high!")
         return turns - 1
     # If the guess is too low compare to the answer, -1 turns
     elif guessed < answer:
         print("Too low!")
         return turns - 1
+    else:
+        print(f"You guessed correctly! It is {answer}!")
 
 def game():
     # Print Welcome and Message statements
@@ -47,7 +47,15 @@ def game():
         # Prompt 'Make a guess' to store user's guess
         guess = int(input("Make a guess: "))
         # Pass the user's guess, computer's number, and turns into the compare function. -1 if the guess is wrong
-        print(compare(guess, computer_number, turns))
+        # update turns after comparing
+        turns = compare(guess, computer_number, turns)
+
+        # if turns reaches 0, tell the user they ran out of guesses
+        if turns == 0:
+            print("You ran out of guesses, you lose!")
+            return 
+        elif guess != computer_number:
+            print("Guess again.") 
 
 game()
 
