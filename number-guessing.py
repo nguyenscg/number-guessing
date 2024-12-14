@@ -16,10 +16,14 @@ def set_difficulty():
 def compare(guessed, answer, turns):
     if guessed == answer:
         print(f"You guessed correctly! it is {answer}")
+    # If the guess is too high compare to the answer, -1 turns
     elif guessed > answer:
         print("Too high!")
+        return turns - 1
+    # If the guess is too low compare to the answer, -1 turns
     elif guessed < answer:
         print("Too low!")
+        return turns - 1
 
 def game():
     # Print Welcome and Message statements
