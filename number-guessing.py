@@ -31,12 +31,16 @@ def game():
     # store random number that the computer is thinking of
     computer_number = random.randint(1, 100)
 
-    # You have xx atempts remaining to guess the number
-    print(f"You have {turns} attempts to guess the number.")
-    # Prompt 'Make a guess'
-    guess = int(input("Make a guess: "))
-    # Compare the guess to computer's number, if it's wrong -1 but allow the user to guess again
-    print(compare(guess, computer_number))
+    # allow user to guess again, so use a while loop
+    # user should be allowed to guess again even if guessed wrong
+    # game keeps going until reaches 0
+    while guess != computer_number:
+        # You have xx attempts remaining to guess the number
+        print(f"You have {turns} attempts to guess the number.")
+        # Prompt 'Make a guess' to store user's guess
+        guess = int(input("Make a guess: "))
+        # Pass the user's guess, computer's number, and turns into the compare function. -1 if the guess is wrong
+        print(compare(guess, computer_number, turns))
 
 game()
 
